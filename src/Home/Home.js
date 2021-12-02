@@ -1,15 +1,17 @@
 import React from 'react';
 import Picker from '../components/Picker/Picker';
 import { useState } from 'react';
+import Character from '../components/Character/Character';
+import './Home.css';
 
 export default function Home() {
   const [head, setHead] = useState('');
   const [body, setBody] = useState('');
   const [legs, setLegs] = useState('');
   const [catchPhrase, setCatchPhrase] = useState('');
-  const [headCount, setHeadCount] = useState('');
-  const [bodyCount, setBodyCount] = useState('');
-  const [legCount, setLegCount] = useState('');
+  const [headCount, setHeadCount] = useState(0);
+  const [bodyCount, setBodyCount] = useState(0);
+  const [legsCount, setLegsCount] = useState(0);
   const [catchList, setCatchList] = useState([]);
 
   return (
@@ -29,23 +31,26 @@ export default function Home() {
             setHeadCount,
             bodyCount,
             setBodyCount,
-            legCount,
-            setLegCount,
+            legsCount,
+            setLegsCount,
             catchList,
             setCatchList,
           }}
         />
-      </div>
-      <div className="tracker">
-        {!!headCount && <p>You`ve changed the head {headCount} times.</p>}
-        {!!bodyCount && <p>You`ve Changed the body {bodyCount} times.</p>}
-        {!!legCount && <p>You`ve changed the legs {legCount} times.</p>}
-        <div className="catch-phrase">
-          Your characters catch phrases:
-          {catchList.map((elem) => (
-            <p key={elem}>{elem}</p>
-          ))}
+        <div className="tracker">
+          {!!headCount && <p>You`ve changed the head {headCount} times.</p>}
+          {!!bodyCount && <p>You`ve Changed the body {bodyCount} times.</p>}
+          {!!legsCount && <p>You`ve changed the legs {legsCount} times.</p>}
+          <div className="catch-phrase">
+            Your characters catch phrases:
+            {catchList.map((elem) => (
+              <p key={elem}>{elem}</p>
+            ))}
+          </div>
         </div>
+      </div>
+      <div className="character">
+        <Character {...{ head, body, legs }} />
       </div>
     </main>
   );
