@@ -1,6 +1,20 @@
 import React from 'react';
 
-export default function Picker({ head, setHead, body, setBody, legs, setLegs, setCatchPhrase }) {
+export default function Picker({
+  head,
+  setHead,
+  body,
+  setBody,
+  legs,
+  setLegs,
+  catchPhrase,
+  setCatchPhrase,
+  setCatchList,
+}) {
+  const handleClick = () => {
+    setCatchList((prevState) => [...prevState, catchPhrase]);
+    setCatchPhrase('');
+  };
   return (
     <div className="picker">
       <div className="form-control">
@@ -28,7 +42,8 @@ export default function Picker({ head, setHead, body, setBody, legs, setLegs, se
       </div>
       <div className="form-control">
         <label>Enter A Catch Phrase!</label>
-        <input type="text" onChange={(e) => setCatchPhrase(e.target.value)} />
+        <input type="text" value={catchPhrase} onChange={(e) => setCatchPhrase(e.target.value)} />
+        <button onClick={handleClick}>Add</button>
       </div>
     </div>
   );
