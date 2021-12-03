@@ -5,9 +5,9 @@ import Character from '../components/Character/Character';
 import './Home.css';
 
 export default function Home() {
-  const [head, setHead] = useState('');
-  const [body, setBody] = useState('');
-  const [legs, setLegs] = useState('');
+  const [head, setHead] = useState('dog-head');
+  const [body, setBody] = useState('dress-middle');
+  const [legs, setLegs] = useState('dog-pants');
   const [catchPhrase, setCatchPhrase] = useState('');
   const [headCount, setHeadCount] = useState(0);
   const [bodyCount, setBodyCount] = useState(0);
