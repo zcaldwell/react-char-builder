@@ -3,7 +3,7 @@ import './Character.css';
 
 export default function Character({ head, body, legs }) {
   return (
-    <div>
+    <div className="char-container">
       <div>
         <img className="character-img" alt={head} src={`${process.env.PUBLIC_URL}/${head}.png`} />
       </div>

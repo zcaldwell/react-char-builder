@@ -1,4 +1,12 @@
 .character-img {
-  width: 100px;
-  height: 100px;
+  width: 250px;
+  height: 250px;
+}
+
+.char-container {
+  width: 400px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
